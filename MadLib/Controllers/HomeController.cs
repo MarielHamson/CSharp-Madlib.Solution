@@ -6,14 +6,26 @@ namespace MadLib.Controllers
   public class HomeController : Controller
   {
 
-    [Route("/hello")]
-    public string Hello() { return "Hello friend!"; }
-
-    [Route("/goodbye")]
-    public string Goodbye() { return "Goodbye friend."; }
 
     [Route("/")]
-    public string Letter() { return "Our virtual postcard will go here soon!"; }
+    public string Letter() { return "Your madlib will appear here!"; }
 
+    [Route("/form")]
+    public ActionResult Form() { return View(); }
+
+    [Route("/madlib")]
+    public ActionResult MadLib(string collectiveNoun, string thing, string kitchenUtensils, string name, string shape, string clothingItem, string color, string seaCreature)
+    {
+      MadLibsVariables myMadLib = new MadLibsVariables();
+      myMadLib.CollectiveNoun = collectiveNoun;
+      myMadLib.Thing = thing;
+      myMadLib.KitchenUtensils = kitchenUtensils;
+      myMadLib.Name = name;
+      myMadLib.Shape = shape;
+      myMadLib.ClothingItem = clothingItem;
+      myMadLib.Color = color;
+      myMadLib.SeaCreature = seaCreature;
+      return View(myMadLib);
+    }
   }
 }
