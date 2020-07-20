@@ -8,18 +8,18 @@ namespace MadLib.Controllers
 
 
     [Route("/")]
-    public string Letter() { return "Your madlib will appear here!"; }
+    public string MadLib() { return "Your madlib will appear here!"; }
 
     [Route("/form")]
     public ActionResult Form() { return View(); }
 
     [Route("/madlib")]
-    public ActionResult MadLib(string collectiveNoun, string thing, string kitchenUtensils, string name, string shape, string clothingItem, string color, string seaCreature)
+    public ActionResult Libs(string collectiveNoun, string thing, string kitchenUtensil, string name, string shape, string clothingItem, string color, string seaCreature)
     {
       MadLibsVariables myMadLib = new MadLibsVariables();
       myMadLib.CollectiveNoun = collectiveNoun;
       myMadLib.Thing = thing;
-      myMadLib.KitchenUtensils = kitchenUtensils;
+      myMadLib.KitchenUtensil = kitchenUtensil;
       myMadLib.Name = name;
       myMadLib.Shape = shape;
       myMadLib.ClothingItem = clothingItem;
